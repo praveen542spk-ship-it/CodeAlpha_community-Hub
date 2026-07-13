@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#040209] text-gray-200 font-sans antialiased overflow-x-hidden min-h-screen relative;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 45%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium text-white tracking-wide;
+  }
+}
+
+/* Glassmorphism custom utility styles */
+.glass {
+  background: rgba(10, 10, 25, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-glow {
+  background: rgba(10, 10, 25, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.05);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  @apply rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all duration-300;
+}
+
+/* Animated ambient light background orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-orb-purple {
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.18);
+  top: 10%;
+  left: 5%;
+}
+
+.bg-orb-blue {
+  width: 500px;
+  height: 500px;
+  background: rgba(59, 130, 246, 0.15);
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom WebRTC local video scaling mirroring override */
+.unmirrored video {
+  transform: scaleX(1) !important;
+}
+
+.mirrored video {
+  transform: scaleX(-1) !important;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-250px) scale(1.6) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-up {
+  animation: floatUp 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}

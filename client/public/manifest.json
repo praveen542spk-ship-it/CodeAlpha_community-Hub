@@ -1,0 +1,28 @@
+{
+  "short_name": "CommHub",
+  "name": "Communication Hub for Developers",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#040209",
+  "theme_color": "#8b5cf6",
+  "display": "standalone",
+  "orientation": "portrait"
+}
